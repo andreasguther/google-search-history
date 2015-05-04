@@ -1,5 +1,5 @@
 # google-search-history
-Parse Google Search History files and extract informaiton in more readable form
+Parse Google Search History files and extract information in more readable form
 
 Python script to parse all Google Search History files in JSON format and 
 print the extracted information sorted and counted to console.
