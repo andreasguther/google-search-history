@@ -19,5 +19,6 @@ The location of the folder containing the JSON files is stored in a config.ini
 file with the following section:
 
 [google.search.history]
+
 searchesFolder = /path/to/the/google/search/history/files
 
