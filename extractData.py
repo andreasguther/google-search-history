@@ -1,9 +1,13 @@
 """
-Reads json files from given directory.  Expects files in the Google Search History JSON format.
+Reads Google Search History JSON files from given directory.
+
+Expected JSON format:
+
 {"event":[
  {"query":{"id":[{"timestamp_usec":"1135905619017279"}],"query_text":"NAT"}},
  {"query":{"id":[{"timestamp_usec":"1135903586447380"}],"query_text":"PBX"}},
 ]}
+
 The folder containing the JSON files is stored in a config.ini file with the section
 
 [google.search.history]
@@ -62,9 +66,9 @@ for key in sorted(searches.keys()):
                 dateList.append(recordedDate + ' (' + str(searches[key]['dates'][recordedDate]) + 'x)')
             else:
                 dateList.append(recordedDate)
-        print("%.5d  %s (%sx) - %s" % (index, key, searches[key]['searched'], dateList))
+        print("%.5d:  %s (%sx) - %s" % (index, key, searches[key]['searched'], sorted(dateList)))
     else:
-        print("%.5d  %s (%sx) - %s" % (index, key, searches[key]['searched'], sorted(searches[key]['dates'])))
+        print("%.5d:  %s (%sx) - %s" % (index, key, searches[key]['searched'], sorted(searches[key]['dates'])))
 
 print("Total number of searches: %d" % searchCounter)
 
